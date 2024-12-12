@@ -8,4 +8,4 @@ script = ExtResource("1_dgi5h")
 name = &"Imp"
 frames = ExtResource("1_6aoml")
 health = 0.0
-damage = 0.0
+damage = 9.0

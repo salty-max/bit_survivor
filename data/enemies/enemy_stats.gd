@@ -1,8 +1,7 @@
 class_name EnemyStats
-extends Resource
+extends Stats
 
 @export_category("Visuals")
-@export var name: StringName
 @export var frames: SpriteFrames
 
 @export_category("Data")

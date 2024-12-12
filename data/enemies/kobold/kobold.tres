@@ -8,4 +8,4 @@ script = ExtResource("1_q2btf")
 name = &"Kobold"
 frames = ExtResource("1_x7teq")
 health = 0.0
-damage = 0.0
+damage = 7.0

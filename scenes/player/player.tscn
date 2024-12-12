@@ -1,17 +1,43 @@
-[gd_scene load_steps=4 format=3 uid="uid://n8tts2unxot5"]
+[gd_scene load_steps=7 format=3 uid="uid://n8tts2unxot5"]
 
 [ext_resource type="Script" path="res://scenes/player/player.gd" id="1_337l5"]
-[ext_resource type="SpriteFrames" uid="uid://bp0rwrldi6w42" path="res://data/classes/mage/mage_frames.tres" id="1_gjivy"]
+[ext_resource type="Resource" uid="uid://ceit3t4hb0eka" path="res://data/classes/mage/mage.tres" id="1_gjivy"]
+[ext_resource type="SpriteFrames" uid="uid://bp0rwrldi6w42" path="res://data/classes/mage/mage_frames.tres" id="3_y0y1e"]
+[ext_resource type="PackedScene" uid="uid://u6t4ndfyi3yq" path="res://scenes/ui/health_bar.tscn" id="4_51w5f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3kiwp"]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2vs0x"]
+
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_337l5")
+stats = ExtResource("1_gjivy")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
-sprite_frames = ExtResource("1_gjivy")
+sprite_frames = ExtResource("3_y0y1e")
 autoplay = "default"
 
 [node name="CollisionBox" type="CollisionShape2D" parent="."]
 scale = Vector2(0.25, 0.25)
 shape = SubResource("CapsuleShape2D_3kiwp")
+
+[node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="HurtBoxCollisionShape" type="CollisionShape2D" parent="HurtBox"]
+unique_name_in_owner = true
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CapsuleShape2D_2vs0x")
+
+[node name="HealthBar" parent="." instance=ExtResource("4_51w5f")]
+offset_left = -6.0
+offset_top = -7.0
+offset_right = 6.0
+offset_bottom = -6.0
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="body_entered" from="HurtBox" to="." method="_on_hurt_box_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="PlayerStats" load_steps=3 format=3 uid="uid://ceit3t4hb0eka"]
+
+[ext_resource type="Script" path="res://data/classes/player_stats.gd" id="1_d8eq2"]
+[ext_resource type="SpriteFrames" uid="uid://bp0rwrldi6w42" path="res://data/classes/mage/mage_frames.tres" id="1_n6pmn"]
+
+[resource]
+script = ExtResource("1_d8eq2")
+frames = ExtResource("1_n6pmn")
+max_health = 100.0
+health = 100.0
+speed = 150.0
+name = &"Mage"

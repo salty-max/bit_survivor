@@ -8,4 +8,4 @@ script = ExtResource("1_jqqdd")
 name = &"Skeleton"
 frames = ExtResource("1_dsusb")
 health = 0.0
-damage = 0.0
+damage = 5.0
