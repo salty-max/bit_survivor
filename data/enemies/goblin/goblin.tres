@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://cxg00waix7oi7"]
+
+[ext_resource type="SpriteFrames" uid="uid://bjctgs3nmm3xe" path="res://data/enemies/goblin/goblin_frames.tres" id="1_2gomd"]
+[ext_resource type="Script" path="res://data/enemies/enemy_stats.gd" id="1_ia65k"]
+
+[resource]
+script = ExtResource("1_ia65k")
+name = &"Goblin"
+frames = ExtResource("1_2gomd")
+health = 0.0
+damage = 0.0

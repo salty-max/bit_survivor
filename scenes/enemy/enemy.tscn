@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://clganm2jylx2j"]
+
+[ext_resource type="Script" path="res://scenes/enemy/enemy.gd" id="1_i4t6w"]
+[ext_resource type="SpriteFrames" uid="uid://67qwoc1bv8uo" path="res://data/enemies/skeleton/skeleton_frames.tres" id="1_ixy1m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gw88l"]
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_i4t6w")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_ixy1m")
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CapsuleShape2D_gw88l")

@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://cnent8773gs6t"]
+
+[ext_resource type="Script" path="res://data/enemies/enemy_stats.gd" id="1_h2xfo"]
+[ext_resource type="SpriteFrames" uid="uid://dkkxoejiterb4" path="res://data/enemies/bat/bat_frames.tres" id="1_v0g44"]
+
+[resource]
+script = ExtResource("1_h2xfo")
+name = &"Bat"
+frames = ExtResource("1_v0g44")
+health = 0.0
+damage = 0.0

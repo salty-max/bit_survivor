@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://rwiycnlvijsf"]
+
+[ext_resource type="Script" path="res://scenes/components/enemy_spawner.gd" id="1_gcwma"]
+[ext_resource type="Script" path="res://data/enemies/enemy_stats.gd" id="2_2rxd7"]
+[ext_resource type="Resource" uid="uid://dymbcs27kc47m" path="res://data/enemies/rat/rat.tres" id="3_mpbia"]
+[ext_resource type="Resource" uid="uid://cnent8773gs6t" path="res://data/enemies/bat/bat.tres" id="4_2vp00"]
+[ext_resource type="Resource" uid="uid://cdqn5t3lhbbmj" path="res://data/enemies/skeleton/skeleton.tres" id="5_3m37k"]
+[ext_resource type="Resource" uid="uid://divypasioe1i1" path="res://data/enemies/kobold/kobold.tres" id="6_j6c6w"]
+[ext_resource type="Resource" uid="uid://fl3voma0rths" path="res://data/enemies/imp/imp.tres" id="7_vp8nj"]
+
+[node name="EnemySpawner" type="Node"]
+script = ExtResource("1_gcwma")
+enemy_types = Array[ExtResource("2_2rxd7")]([ExtResource("3_mpbia"), ExtResource("4_2vp00"), ExtResource("5_3m37k"), ExtResource("6_j6c6w"), ExtResource("7_vp8nj")])
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 7.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 2
+
+[node name="MinutesLabel" type="Label" parent="UI/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "0"
+
+[node name="Label2" type="Label" parent="UI/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = ":"
+
+[node name="SecondsLabel" type="Label" parent="UI/MarginContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00"
+
+[node name="NormalTimer" type="Timer" parent="."]
+autostart = true
+
+[node name="PatternTimer" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="EliteTimer" type="Timer" parent="."]
+wait_time = 9.0
+autostart = true
+
+[connection signal="timeout" from="NormalTimer" to="." method="_on_normal_timer_timeout"]

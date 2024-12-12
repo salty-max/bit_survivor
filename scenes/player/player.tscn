@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://n8tts2unxot5"]
+
+[ext_resource type="Script" path="res://scenes/player/player.gd" id="1_337l5"]
+[ext_resource type="SpriteFrames" uid="uid://bp0rwrldi6w42" path="res://data/classes/mage/mage_frames.tres" id="1_gjivy"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3kiwp"]
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_337l5")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = ExtResource("1_gjivy")
+autoplay = "default"
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+scale = Vector2(0.25, 0.25)
+shape = SubResource("CapsuleShape2D_3kiwp")

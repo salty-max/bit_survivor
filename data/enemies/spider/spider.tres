@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://d0cvphua7ivgn"]
+
+[ext_resource type="Script" path="res://data/enemies/enemy_stats.gd" id="1_d33j3"]
+[ext_resource type="SpriteFrames" uid="uid://dwl2yptlauljm" path="res://data/enemies/spider/spider_frames.tres" id="1_v5syg"]
+
+[resource]
+script = ExtResource("1_d33j3")
+name = &"Spider"
+frames = ExtResource("1_v5syg")
+health = 0.0
+damage = 0.0

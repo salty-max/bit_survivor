@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://divypasioe1i1"]
+
+[ext_resource type="Script" path="res://data/enemies/enemy_stats.gd" id="1_q2btf"]
+[ext_resource type="SpriteFrames" uid="uid://cpbyort6bku7u" path="res://data/enemies/kobold/kobold_frames.tres" id="1_x7teq"]
+
+[resource]
+script = ExtResource("1_q2btf")
+name = &"Kobold"
+frames = ExtResource("1_x7teq")
+health = 0.0
+damage = 0.0
